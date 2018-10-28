@@ -8,8 +8,8 @@ clean:
 clean_objects: 
 	rm *.o
 
-decorator: IOCipher.o Decorator.o toNumberDecorator.o Main.o
-	g++ IOCipher.o Decorator.o toNumberDecorator.o Main.o -o decorator $(FLAGS) 
+decorator: IOCipher.o Decorator.o toNumberDecorator.o Client.o
+	g++ IOCipher.o Decorator.o toNumberDecorator.o Client.o -o decorator $(FLAGS) 
 	make clean_objects
 
 IOCipher.o: IOCipher.cpp IOCipher.hpp IO.hpp
@@ -21,7 +21,7 @@ Decorator.o: Decorator.cpp Decorator.hpp IO.hpp
 toNumberDecorator.o: toNumberDecorator.cpp toNumberDecorator.hpp Decorator.hpp
 	g++ -c toNumberDecorator.cpp
 
-Main.o: Main.cpp IO.hpp
-	g++ -c Main.cpp
+Client.o: Client.cpp Client.hpp IO.hpp
+	g++ -c Client.cpp
 
 

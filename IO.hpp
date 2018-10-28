@@ -11,9 +11,9 @@ public:
 	IO();
 	~IO();
 
-	string readPassword();
-	string cryptPassword(string password);
-	void printPassword(string password);
+	virtual string readPassword()= 0;
+	virtual string cryptPassword(string password) = 0;
+	virtual void printPassword(string password) = 0;
 protected:
 	
 };
